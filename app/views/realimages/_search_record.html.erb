@@ -1,0 +1,37 @@
+ <div class="container">
+ <%if @search_record.present? %>
+  <h1><%= @search_record['name']%></h1>
+  <div class="row">
+ <% key_vlu = @search_record.keys[3]%>
+  <% @search_record[key_vlu].each do |value|  %>
+    <div class="col-sm-3" >
+      <p>Movies: <%= value["name"]%></p>
+      <p>Role: <%= value["role"]%></p>
+    </div>
+    </br>
+    <div class="col-sm-3" >
+      <p>Movies: <%= value["name"]%></p>
+      <p>Role: <%= value["role"]%></p>
+    </div>
+    </br>
+    <div class="col-sm-3" >
+      <p>Movies: <%= value["name"]%></p>
+      <p>Role: <%= value["role"]%></p>
+    </div>
+    </br>
+    <div class="col-sm-3" >
+      <p>Movies: <%= value["name"]%></p>
+      <p>Role: <%= value["role"]%></p>
+    </div>
+    </br>
+    <%end%>
+  </div>
+  <%else%>
+  <div class="col-sm-12" >
+     <p>  No Record Available </p>
+    </div>
+  <%end%>
+</div>
+</div>
+
+

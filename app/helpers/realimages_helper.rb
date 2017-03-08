@@ -1,0 +1,2 @@
+module RealimagesHelper
+end

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Realimages</h1>
+<table>
+  <thead>
+    <tr>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" id="addressSearch" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+        </div>
+    </tr>
+   </thead>
+  <tbody>
+   <div id="record_list">
+   </div>
+  </tbody>
+</table>
+<br>
+
+<script>
+$('#addressSearch').click(function () {
+var name = $('input:text').val();
+if(name == ""){
+    alert("Please enter the valid text")
+}
+ $.ajax({
+  url: "realimages/search_record?search_name=" + name,
+        type: 'GET',
+        success: function(response){   
+          $('#record_list').html(response)
+        }
+
+    });
+});
+</script>
